@@ -7,19 +7,24 @@
     "icon": "./assets/images/icon.png",
     "scheme": "firstapp",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "googleMobileAdsAppId": "ca-app-pub-3781453093578120~1592794985"
     },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "foregroundImage": "./assets/images/android-icon-foreground.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "googleMobileAdsAppId": "ca-app-pub-3781453093578120~1592794985",
+      "minSdkVersion": 24,
+      "compileSdkVersion": 34,
+      "targetSdkVersion": 34,
+      "useNextNotificationFormat": true,
+      "package": "com.firstapp.todos"
     },
     "web": {
       "output": "static",
@@ -42,7 +47,7 @@
     ],
     "experiments": {
       "typedRoutes": true,
-      "reactCompiler": true
+      "reactCompiler": false
     }
   }
 }

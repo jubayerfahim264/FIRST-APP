@@ -1,0 +1,39 @@
+{
+  "cli": {
+    "version": ">= 5.0.0"
+  },
+  "build": {
+    "production": {
+      "android": {
+        "buildType": "apk",
+        "distribution": "internal",
+        "node": "18.13.0",
+        "env": {
+          "ANDROID_BUILD_APK_MODULE_NAME": "app",
+          "ANDROID_GRADLE_BUILD_OPTS": "-Dorg.gradle.jvmargs=-Xmx4096m"
+        }
+      }
+    },
+    "preview": {
+      "android": {
+        "buildType": "apk",
+        "distribution": "internal"
+      }
+    },
+    "development": {
+      "android": {
+        "buildType": "apk",
+        "distribution": "internal",
+        "developmentClient": true
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "serviceAccount": "~/.android/service-account-key.json",
+        "track": "internal"
+      }
+    }
+  }
+}
