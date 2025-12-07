@@ -7,7 +7,7 @@
       "android": {
         "buildType": "apk",
         "distribution": "internal",
-        "node": "18.13.0",
+        "node": "20.19.4",
         "env": {
           "ANDROID_BUILD_APK_MODULE_NAME": "app",
           "ANDROID_GRADLE_BUILD_OPTS": "-Dorg.gradle.jvmargs=-Xmx4096m"
@@ -24,15 +24,8 @@
       "android": {
         "buildType": "apk",
         "distribution": "internal",
-        "developmentClient": true
-      }
-    }
-  },
-  "submit": {
-    "production": {
-      "android": {
-        "serviceAccount": "~/.android/service-account-key.json",
-        "track": "internal"
+        "developmentClient": true,
+        "node": "20.19.4"
       }
     }
   }

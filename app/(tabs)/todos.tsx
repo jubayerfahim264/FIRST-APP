@@ -8,7 +8,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import Animated, { FadeIn, SlideInRight, ZoomIn } from 'react-native-reanimated';
+// import Animated, { FadeIn, SlideInRight, ZoomIn } from 'react-native-reanimated'; // Disabled for build testing
 
 import { AdMobBanner, AdMobInterstitial } from '@/components/admob';
 import { ThemedText } from '@/components/themed-text';
@@ -93,7 +93,7 @@ export default function TodosScreen() {
 
   const renderItem = ({ item, index }: { item: Todo; index: number }) => {
     return (
-      <Animated.View entering={SlideInRight.delay(index * 50).springify()}>
+      <View>
         <Pressable
           onPress={() => toggleComplete(item.id)}
           onLongPress={() => startEdit(item)}
@@ -124,7 +124,7 @@ export default function TodosScreen() {
             <ThemedText style={styles.deleteIcon}>✕</ThemedText>
           </Pressable>
         </Pressable>
-      </Animated.View>
+      </View>
     );
   };
 
@@ -133,7 +133,7 @@ export default function TodosScreen() {
 
   return (
     <ThemedView style={styles.container}>
-      <Animated.View entering={FadeIn.duration(800)}>
+      <View>
         {/* Header */}
         <View style={styles.header}>
           <ThemedText type="title" style={styles.title}>
@@ -149,7 +149,7 @@ export default function TodosScreen() {
 
         {/* Form Section */}
         {showForm ? (
-          <Animated.View entering={ZoomIn.springify()} style={styles.formContainer}>
+          <View style={styles.formContainer}>
             <TextInput
               placeholder="Task title"
               placeholderTextColor={colorScheme === 'dark' ? '#999' : '#888'}
@@ -185,7 +185,7 @@ export default function TodosScreen() {
                 </ThemedText>
               </Pressable>
             </View>
-          </Animated.View>
+          </View>
         ) : (
           <Pressable
             style={({ pressed }) => [styles.addButton, pressed && { transform: [{ scale: 0.95 }] }]}
@@ -196,10 +196,10 @@ export default function TodosScreen() {
 
         {/* List Section */}
         {todos.length === 0 ? (
-          <Animated.View entering={FadeIn.delay(500)} style={styles.emptyContainer}>
+          <View style={styles.emptyContainer}>
             <ThemedText style={styles.emptyText}>No tasks yet!</ThemedText>
-            <ThemedText style={styles.emptySubText}>Tap "Add New Task" to get started</ThemedText>
-          </Animated.View>
+            <ThemedText style={styles.emptySubText}>Tap &quot;Add New Task&quot; to get started</ThemedText>
+          </View>
         ) : (
           <FlatList
             data={todos}
@@ -210,7 +210,7 @@ export default function TodosScreen() {
             contentContainerStyle={styles.listContent}
           />
         )}
-      </Animated.View>
+      </View>
       {/* AdMob Banner Ad */}
       <AdMobBanner />
     </ThemedView>
